@@ -1,0 +1,18 @@
+{
+  "name": "myshop_e",
+  "version": "1.0.0",
+  "description": "MERN shopping app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/euiri/MyShop_Etp"
+  },
+  "author": "Euiri Han",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
