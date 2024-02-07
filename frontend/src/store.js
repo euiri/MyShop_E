@@ -2,12 +2,16 @@ import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import { productDetailsReducer, productListReducer } from './reducers/productReducers'
 import { cartReducer } from './reducers/cartReducers'
 import { userLoginReducer } from './reducers/userReducers'
+import { orderCreateReducer, orderDetailReducer, orderPayReducer } from './reducers/orderReducers'
 
 const rootReducer = combineReducers({
   productList : productListReducer,
   productDetails : productDetailsReducer,
   cart: cartReducer,
-  userLogin: userLoginReducer
+  userLogin: userLoginReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailReducer,
+  orderPay: orderPayReducer
 })
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
@@ -18,8 +22,20 @@ const userInfoFromStorage = localStorage.getItem('userInfo')
   ? JSON.parse(localStorage.getItem('userInfo'))
   : null
 
+const paymentMethodFromStrorage = localStorage.getItem('paymentMethod')
+  ? JSON.parse(localStorage.getItem('paymentMethod'))
+  : {}
+
+const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
+  ? JSON.parse(localStorage.getItem('shippingAddress'))
+  : {}
+
 const initialState = {
-  cart : {cartItems : cartItemsFromStorage},
+  cart : {
+    cartItems : cartItemsFromStorage,
+    shippingAddress: shippingAddressFromStorage,
+    paymentMethod: paymentMethodFromStrorage
+  },
   userLogin : {userInfo : userInfoFromStorage}
 }
 
