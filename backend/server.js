@@ -27,6 +27,7 @@ if (process.env.NODE_ENV === 'production'){
   })
 }
 
+
 app.use(errorHandler)
-const port = process.env.PORT 
+const port = process.env.PORT
 app.listen(port, console.log(`Server is running on port ${port}`))
