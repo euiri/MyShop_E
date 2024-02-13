@@ -1,7 +1,9 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import { productDetailsReducer, productListReducer } from './reducers/productReducers'
 import { cartReducer } from './reducers/cartReducers'
-import { userLoginReducer } from './reducers/userReducers'
+import { userLoginReducer,
+  userDetailsReducer,
+  userUpdateProfileReducer,userRegisterReducer  } from './reducers/userReducers'
 import { orderCreateReducer, orderDetailReducer, orderPayReducer } from './reducers/orderReducers'
 
 const rootReducer = combineReducers({
@@ -9,6 +11,9 @@ const rootReducer = combineReducers({
   productDetails : productDetailsReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailReducer,
   orderPay: orderPayReducer
